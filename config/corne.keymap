@@ -37,36 +37,51 @@
 //      acceleration-exponent = <4>;
 // };
 
+/*                            KEY POSITIONS
+  ╭─────────────────────────────╮         ╭──────────────────────────────╮
+  │  0   1Q   2W   3E   4R   5T │         │  6Y   7U   8I   9O  10P  11| │
+  │ 12  13A  14S  15D  16F  17G │         │ 18H  19J  20K  21L  22;  23' │
+  │ 24  25\  26z  27x  28c  29v ╰───╮ ╭───╯ 30b  31n  32m  33,  34.  35/ │
+  ╰──────────────────╮ 36   37   38 │ │ 39   40   41 ╭───────────────────╯
+                     ╰──────────────╯ ╰──────────────╯            */
 
-&spi1 {
-	compatible = "nordic,nrf-spim";
-	/* Cannot be used together with i2c0. */
-	status = "okay";
-	mosi-pin = <6>;
-	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
-	sck-pin = <5>;
-	miso-pin = <7>;
-
-	led_strip: ws2812@0 {
-		compatible = "worldsemi,ws2812-spi";
-		label = "SK6812mini";
-
-		/* SPI */
-		reg = <0>; /* ignored, but necessary for SPI bindings */
-		spi-max-frequency = <4000000>;
-
-		/* WS2812 */
-		chain-length = <27>; /* There are per-key RGB, but the first 6 are underglow */
-		spi-one-frame = <0x70>;
-		spi-zero-frame = <0x40>;
-	};
-};
 / {
-	chosen {
-		zmk,underglow = &led_strip;
-	};
-};
-/ {
+    combos {
+        // Symbols / Operations
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>; // KP: TAB Q
+            bindings = <&kp ESC>; // ESC
+            layers = <0 >;
+        };
+        combo_win {
+            timeout-ms = <50>;
+            key-positions = <36 37>; // KP: ALT SPACE
+            bindings = <&kp LEFT_WIN>; // LWIN
+            layers = <0 >;
+        };
+        combo_f12 {
+            timeout-ms = <50>;
+            key-positions = <10 11>; // KP:P BSK
+            bindings = <&kp F12>; // F12
+            layers = <0 >;
+        };
+        combo_SEMICOLON {
+            timeout-ms = <50>;
+            key-positions = <22 23>; // KP: up dot
+            bindings = <&kp SEMI>; // ;
+            layers = <0 >;
+        };
+        combo_SINGLE_QUOTE {
+            timeout-ms = <50>;
+            key-positions = <23 35>; // KP: dot right
+            bindings = <&kp SQT>; // '
+            layers = <0 >;
+        };	
+    };
+}; 
+
 
         keymap {
                 compatible = "zmk,keymap";
