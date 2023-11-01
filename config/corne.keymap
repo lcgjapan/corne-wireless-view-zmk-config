@@ -38,19 +38,16 @@
 // };
 
 
-
 / {
     combos {
-        // Symbols / Operations
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <0 1>; 
-            bindings = <&kp ESC>; 
-        };     
-　  };	
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+    };
 };
-
 
         keymap {
                 compatible = "zmk,keymap";
