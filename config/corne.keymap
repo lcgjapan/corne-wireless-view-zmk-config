@@ -3,15 +3,41 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#define DEF 0
+#define LWR 1
+#define RSE 2
+#define ADJ 3
+#define MED 4
+#define NOT 5
+#define LOC 6
+// #define MOU 7
+
+&lt {
+    tapping-term-ms = <250>;
+    quick_tap_ms=<200>; 
+    flavor = "tap-preferred"; 
+    };
+
+&mt { 
+    quick_tap_ms=<200>; 
+    };
+
+// &mmv {
+//      time-to-max-speed-ms = <256>;
+//      acceleration-exponent = <3>;
+// };
+
+// &mwh {
+//      time-to-max-speed-ms = <48>;
+//      acceleration-exponent = <4>;
+// };
 
 / {
         keymap {
                 compatible = "zmk,keymap";
-
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
@@ -40,7 +66,6 @@
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
-
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
