@@ -55,29 +55,7 @@
             bindings = <&kp ESC>; // ESC
             layers = <0 >;
         };
-        combo_win {
-            timeout-ms = <50>;
-            key-positions = <36 37>; // KP: ALT SPACE
-            bindings = <&kp LEFT_WIN>; // LWIN
-            layers = <0 >;
-        };
-        combo_f12 {
-            timeout-ms = <50>;
-            key-positions = <10 11>; // KP:P BSK
-            bindings = <&kp F12>; // F12
-            layers = <0 >;
-        };
-        combo_SEMICOLON {
-            timeout-ms = <50>;
-            key-positions = <22 23>; // KP: up dot
-            bindings = <&kp SEMI>; // ;
-            layers = <0 >;
-        };
-        combo_SINGLE_QUOTE {
-            timeout-ms = <50>;
-            key-positions = <23 35>; // KP: dot right
-            bindings = <&kp SQT>; // '
-            layers = <0 >;
+       
         };	
     };
 }; 
