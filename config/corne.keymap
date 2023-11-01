@@ -37,8 +37,6 @@
 //      acceleration-exponent = <4>;
 // };
 
-
-
         keymap {
                 compatible = "zmk,keymap";
 
