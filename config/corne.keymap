@@ -17,26 +17,6 @@
 #define LOC 6
 // #define MOU 7
 
-&lt {
-    tapping-term-ms = <250>;
-    quick_tap_ms=<200>; 
-    flavor = "tap-preferred"; 
-    };
-
-&mt { 
-    quick_tap_ms=<200>; 
-    };
-
-// &mmv {
-//      time-to-max-speed-ms = <256>;
-//      acceleration-exponent = <3>;
-// };
-
-// &mwh {
-//      time-to-max-speed-ms = <48>;
-//      acceleration-exponent = <4>;
-// };
-
         keymap {
                 compatible = "zmk,keymap";
 
