@@ -48,10 +48,9 @@
             key-positions = <0 1>; // KP: TAB Q
             bindings = <&kp ESC>; // ESC
             layers = <0 >;
-        };
-       
-        };	
-    };
+        };     
+　  };	
+};
 
 
         keymap {
