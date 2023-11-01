@@ -47,7 +47,6 @@
             timeout-ms = <50>;
             key-positions = <0 1>; // KP: TAB Q
             bindings = <&kp ESC>; // ESC
-            layers = <0 >;
         };     
 　  };	
 };
